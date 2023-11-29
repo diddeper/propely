@@ -2,7 +2,11 @@
 
 Dockerized Node.js app that proxies data from https://api.nilu.no/ and persisting it using MongoDB.
 
-## How to:
+## Prerequisites
+
+- Docker
+
+## Run
 
 1. Run docker container:
 

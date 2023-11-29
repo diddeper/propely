@@ -6,7 +6,7 @@ import {
   MeantypeDataModel,
   StationDataModel,
   TimeserieDataModel,
-} from "./db"
+} from "./database/models"
 import { fetchData } from "./lib"
 import {
   AQIResponse,

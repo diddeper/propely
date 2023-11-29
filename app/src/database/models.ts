@@ -1,6 +1,4 @@
-import mongoose, { Schema } from "mongoose"
-
-const DB_URL = "mongodb://db:27017/propely"
+import { model, Schema } from "mongoose"
 
 const AQISchema = new Schema({
   component: String,
@@ -19,7 +17,7 @@ const AQISchema = new Schema({
   ],
 })
 
-export const AQIDataModel = mongoose.model("AQI", AQISchema)
+export const AQIDataModel = model("AQI", AQISchema)
 
 const AreaSchema = new Schema({
   area: String,
@@ -28,21 +26,21 @@ const AreaSchema = new Schema({
   zone: String,
 })
 
-export const AreaDataModel = mongoose.model("Area", AreaSchema)
+export const AreaDataModel = model("Area", AreaSchema)
 
 const ComponentSchema = new Schema({
   component: String,
   topic: String,
 })
 
-export const ComponentDataModel = mongoose.model("Component", ComponentSchema)
+export const ComponentDataModel = model("Component", ComponentSchema)
 
 const MeantypeSchema = new Schema({
   id: Number,
   label: String,
 })
 
-export const MeantypeDataModel = mongoose.model("Meantype", MeantypeSchema)
+export const MeantypeDataModel = model("Meantype", MeantypeSchema)
 
 const StationSchema = new Schema({
   id: Number,
@@ -63,7 +61,7 @@ const StationSchema = new Schema({
   isVisible: Boolean,
 })
 
-export const StationDataModel = mongoose.model("Station", StationSchema)
+export const StationDataModel = model("Station", StationSchema)
 
 const TimeserieSchema = new Schema({
   id: Number,
@@ -87,8 +85,4 @@ const TimeserieSchema = new Schema({
   topic: String,
 })
 
-export const TimeserieDataModel = mongoose.model("Timeserie", TimeserieSchema)
-
-export const initDB = async () => {
-  await mongoose.connect(DB_URL)
-}
+export const TimeserieDataModel = model("Timeserie", TimeserieSchema)

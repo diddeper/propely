@@ -7,7 +7,7 @@ import {
   stationsController,
   timeseriesController,
 } from "./controllers"
-import { initDB } from "./db"
+import { initDB } from "./database"
 ;(async () => {
   const app = express()
   const port = "8080"
