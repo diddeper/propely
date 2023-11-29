@@ -30,7 +30,7 @@ export interface MeantypeResponse {
   label: string
 }
 
-export interface Station {
+export interface StationResponse {
   id: number
   zone: string
   municipality: string
@@ -49,7 +49,7 @@ export interface Station {
   isVisible: boolean
 }
 
-export interface Timeserie {
+export interface TimeserieResponse {
   id: number
   height: number
   zone: string

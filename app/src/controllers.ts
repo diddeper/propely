@@ -13,8 +13,8 @@ import {
   AreaResponse,
   ComponentResponse,
   MeantypeResponse,
-  Station,
-  Timeserie,
+  StationResponse,
+  TimeserieResponse,
 } from "./types"
 
 const BASE_URL = "https://api.nilu.no/lookup"
@@ -77,11 +77,11 @@ export const meantypesController = async (
 
 export const stationsController = async (
   _req: Request,
-  res: Response<Station[]>
+  res: Response<StationResponse[]>
 ) => {
   try {
     const url = `${BASE_URL}/stations`
-    const stations = await fetchData<Station[]>(url)
+    const stations = await fetchData<StationResponse[]>(url)
     await StationDataModel.insertMany(stations)
     return res.status(200).json(stations)
   } catch (error) {
@@ -91,11 +91,11 @@ export const stationsController = async (
 
 export const timeseriesController = async (
   _req: Request,
-  res: Response<Timeserie[]>
+  res: Response<TimeserieResponse[]>
 ) => {
   try {
     const url = `${BASE_URL}/timeseries`
-    const timeseries = await fetchData<Timeserie[]>(url)
+    const timeseries = await fetchData<TimeserieResponse[]>(url)
     await TimeserieDataModel.insertMany(timeseries)
     return res.status(200).json(timeseries)
   } catch (error) {
