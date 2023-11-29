@@ -15,7 +15,7 @@ docker compose up
 ```
 
 2. In your preferred browser:
-
 ```
-http://localhost:8080/<data>
+http://localhost:8080/<endpoint>
 ```
+Available endpoints: aqis, areas, components, meantypes, stations, timeseries
